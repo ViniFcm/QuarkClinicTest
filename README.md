@@ -19,11 +19,11 @@ Este repositório contém um conjunto de testes automatizados utilizando **Cypre
 ```bash
 git clone https://github.com/seu-repositorio/aqui.git
 cd nome-do-projeto
-
+```
 ```bash
 npm install cypress --save-dev
 npm install --save-dev cypress-file-upload
-
+```
 ▶️ Como Rodar os Testes
 
 Abrir o Test Runner do Cypress
