@@ -24,11 +24,13 @@ cd nome-do-projeto
 npm install cypress --save-dev
 npm install --save-dev cypress-file-upload
 ```
-▶️ Como Rodar os Testes
+### 2. Como Rodar os Testes
 
-Abrir o Test Runner do Cypress
+- Abrir o Test Runner do Cypress
+```bash
 npx cypress open
-Depois selecione E2E e escolha o spec que deseja rodar.
-
-
+```
+- Depois selecione E2E e escolha o spec que deseja rodar.
+- Escolha o navegador desejado
+- Selecione o spec teste para rodar rodar
 
