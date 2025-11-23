@@ -69,7 +69,7 @@ describe('Login', () =>{
 
     })
 
-    it.only('Pagamento', () => {
+    it('Pagamento', () => {
     //Arrang
                 cy.visit('https://agendamento.quarkclinic.com.br/index/363622206');
                 cy.get('[data-cy="btn-login"]').click();
