@@ -66,5 +66,45 @@ describe('Login', () =>{
         //Assert
             
             cy.get('[data-cy="finalizacao-msg-sucesso"]').should('be.visible');
+
+    })
+
+    it.only('Pagamento', () => {
+    //Arrang
+                cy.visit('https://agendamento.quarkclinic.com.br/index/363622206');
+                cy.get('[data-cy="btn-login"]').click();
+                cy.get('[data-cy="campo-usuario-input"]').type('teste108@gmail.com');
+                cy.get('[name="password"]').type(senha);
+                cy.get('[data-cy="checkbox-aceita-politicas"]').click();
+                cy.get('[data-cy="btn-submit-login"]').click(); 
+                cy.contains('button', 'Bem-vindo(a), Teste').should('be.visible');
+            //Act
+                cy.get('[data-cy="btn-consulta-presencial"]').click();
+                cy.get('[data-cy="convenio-label-148"]').click();
+                cy.get('[data-cy="convenio-radio-148"]').check();
+                cy.get('[data-cy^="agenda-item-horario-texto"]').first().click();
+                cy.get('[data-cy="paciente-card-radio-label"]').click();
+                cy.get('[data-cy="confirmacao-paciente"]').should('contain','Teste');
+                cy.get('[data-cy="confirmacao-especialidade"]').should('contain','CARDIOLOGIA');
+                cy.get('[data-cy="confirmacao-profissional"]').should('contain','Dr. Profissional de Saude Cypress');
+                cy.get('[data-cy="confirmacao-btn-confirmar"]').click();
+            //Assert
+                
+                cy.get('[data-cy="finalizacao-msg-sucesso"]').should('be.visible');
+    
+            cy.get('[data-cy="header-logo-image"]').click();
+            cy.get('#__BVID__67__BV_toggle_').click();
+            cy.get('[data-cy="dropdown-item-historico"] a.dropdown-item').click();
+            cy.contains('button', 'Enviar').click();
+            cy.get('#comprovante').attachFile('EStudos.png');
+
+           cy.get('[data-cy="pagamento-form-btn-enviar"]')
+            .scrollIntoView()
+            .should('be.visible')
+            .click({ force: true });
+
+
     })
 });
+
+
